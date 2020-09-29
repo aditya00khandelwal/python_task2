@@ -7,26 +7,13 @@
 - interact with your o.s. in user-friendly language
 - Some of the commands, like: 
 ```shell
-C:> open chrome
-C:> open notepad
-C:> open windows media player
-C:> open browser
-C:> open ms outlook
-C:> open ms powerpoint
-C:> open my computer
-C:> open calculator
-C:> open magnifier
-C:> open paint
-C:> open registry ediitor
-C:> open wordpad
-C:> open system configuration
-C:> run command promt
-C:> open whatsapp
-C:> open task manager
-C:> open microsoft excel
-C:> open control panel
-C:> show time
 C:> show date
-C:> run docker containers
+C:> show calender 
+C:> open firefox 
+C:> create a new userid 
+C:> shows IP address 
+C:> shows the userid through which you are loged in  and many linux commands
+C:> launch OS within a second using Docker
+C:> stop any os 
 Note: 
 > This project is under development stage and fully operational on Redhat Linux
