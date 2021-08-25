@@ -20,7 +20,7 @@ while True:
   elif("calendar" in ch):
     wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=cal")
     pyttsx3.speak("showing calendar")
-  elif("IP" in ch )or ("ip address" in ch) or "address" in ch):
+  elif("IP" in ch )or ("ip address" in ch) or ("address" in ch):
     wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=ifconfig")
     pyttsx3.speak("showing IP address")
   elif("active ports" in ch) or ("ports" in ch):
@@ -44,6 +44,36 @@ while True:
   elif("ping" in ch) or ("google" in ch) and ("server" in ch):
     wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=ping%20-c%205%208.8.8.8")
     pyttsx3.speak("Server is Ping able")
+    
+  #################################AKSHAT CHANGES#############################
+  
+  #install package
+  elif("yum" in ch) or ("module" in ch) and ("install" in ch):
+    packagename=input("Enter package name to install: ")
+    wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=yum%20install%20{packagename}%20-y") #check format
+    pyttsx3.speak("Package is installed")
+  
+  ##find file
+  elif("find" in ch) or ("search" in ch) and ("file" in ch):
+    filename=input("Enter file name to search: ")
+    dirpath=input("Enter the location: ")
+    # wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=find%20./{dirpath}%20-name%20{filename}")  #if command not worked try 
+    wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=find%20{dirpath}%20-name%20{filename}") #check format
+    #pyttsx3.speak("Package is installed")
+    pyttsx3.speak("File Found")
+  
+  ##set cronjobs
+  elif("set" in ch) or ("create" in ch) and ("cronjobs" in ch):
+    command=input("Enter command to run in every two minutes: ")
+    filename=input("Enter the filename to execute: ")
+    # wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=find%20./{dirpath}%20-name%20{filename}")  #if command not worked try 
+    wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=crontab%20-l%20|%20(%20cat;%20|%20echo%20"( * * * * {command} {filename}";)%20|%20crontab%20-") #check format
+    #pyttsx3.speak("Package is installed")
+    pyttsx3.speak("cronjob set")
+  
+  ################################################################################################
+      
+
   elif ("How" in ch) and ("you can" in ch) or ("help me" in ch):
     pyttsx3.speak("i can help you in following ways")
     print()
