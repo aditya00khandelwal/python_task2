@@ -4,7 +4,7 @@ import pyttsx3
 pyttsx3.speak("Hello")
 print()
 print("WELCOME TO MY INTELLIGENCE WORLD".center(125))                    
-engine.runAndWait()
+# engine.runAndWait()
 pyttsx3.speak("I am your voice assistant")
 pyttsx3.speak("How can i assist you...?")
 
@@ -90,9 +90,18 @@ while True:
     pyttsx3.speak("directory created")
   elif("SDK" in ch) or ("python library" in ch):
     wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=pip3%20install%20boto3")
-    pyttsx3.speak("boto three is already satisfied")  
+    pyttsx3.speak("boto three is already satisfied")
+  elif ("lv" in ch) or ("logical volume" in ch):
+    wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=sudo%20lvdisplay")
+    pyttsx3.speak("Here is the detail of your logical volume in current Volume Group...")
+  elif ("vg" in ch) or ("volume group" in ch):
+    wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=sudo%20vgdisplay")
+    pyttsx3.speak("Here is the detail of your Volume Group...")
+  elif ("file system" in ch) or ("fs" in ch) or ("fstab" in ch):
+    wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=cat%20/etc/fstab%20|%20grep%20/dev")
+    pyttsx3.speak("It is the file system of Linux Server")
   elif ("exit" in ch) or ("quit" in ch) or ("bye" in ch):
     pyttsx3.speak("see you soon,, have a nice day...!!!")
     break
   else:
-    print("not understand")
+    print("Please Try Again")
