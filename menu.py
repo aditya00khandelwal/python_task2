@@ -44,8 +44,6 @@ while True:
   elif("ping" in ch) or ("google" in ch) and ("server" in ch):
     wb.open("http://192.168.43.202/cgi-bin/newtask.py?x=ping%20-c%205%208.8.8.8")
     pyttsx3.speak("Server is Ping able")
-    
-  #################################AKSHAT CHANGES#############################
   
   #install package
   elif("yum" in ch) or ("module" in ch) and ("install" in ch):
@@ -73,9 +71,6 @@ while True:
     #pyttsx3.speak("Package is installed")
     pyttsx3.speak("cronjob set")
   
-  ################################################################################################
-      
-
   elif ("How" in ch) and ("you can" in ch) or ("help me" in ch):
     pyttsx3.speak("i can help you in following ways")
     print()
