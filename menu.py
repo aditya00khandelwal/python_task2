@@ -57,6 +57,7 @@ while True:
   elif("find" in ch) or ("search" in ch) and ("file" in ch):
     filename=input("Enter file name to search: ")
     dirpath=input("Enter the location: ")
+    
     # wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=find%20./{dirpath}%20-name%20{filename}")  #if command not worked try 
     wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=find%20{dirpath}%20-name%20{filename}") #check format
     #pyttsx3.speak("Package is installed")
@@ -66,8 +67,9 @@ while True:
   elif("set" in ch) or ("create" in ch) and ("cronjobs" in ch):
     command=input("Enter command to run in every two minutes: ")
     filename=input("Enter the filename to execute: ")
+    commandpass=f"cat; | echo */2 * * * * {command} {filename}"
     # wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=find%20./{dirpath}%20-name%20{filename}")  #if command not worked try 
-    wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=crontab%20-l%20|%20(%20cat;%20|%20echo%20"( * * * * {command} {filename}";)%20|%20crontab%20-") #check format
+    wb.open(f"http://192.168.43.202/cgi-bin/newtask.py?x=crontab%20-l%20|%20{commandpass}|%20crontab%20-") #check format
     #pyttsx3.speak("Package is installed")
     pyttsx3.speak("cronjob set")
   
